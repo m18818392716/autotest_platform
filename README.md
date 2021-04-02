@@ -1,1 +1,1 @@
-# autotest_platform
+接口测试自动化测试平台，来源于课外书籍
