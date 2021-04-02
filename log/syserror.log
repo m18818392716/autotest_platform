@@ -1,0 +1,677 @@
+2021-03-20 22:38:44,196 opmysql.py[line:42] ERROR (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Traceback (most recent call last):
+  File "E:/workspace/PycharmProject/autotest_platform/common/opmysql.py", line 33, in __init__
+    charset='utf8',cursorclass = pymysql.cursors.DictCursor)#创建数据库链接,返回字典
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\pymysql\connections.py", line 633, in connect
+    self._request_authentication()
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\pymysql\connections.py", line 907, in _request_authentication
+    auth_packet = self._read_packet()
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2021-03-20 22:44:25,026 analyse.py[line:65] ERROR [Errno 2] No such file or directory: 'E:\\workspace\\PycharmProject\\autotest_platform/report/report_module.xls'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\analyse.py", line 36, in export2excel
+    src = open_workbook(config.src_path + '/report/report_module.xls',formatting_info=True)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\xlrd\__init__.py", line 60, in inspect_format
+    with open(path, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\workspace\\PycharmProject\\autotest_platform/report/report_module.xls'
+2021-03-20 22:47:15,944 analyse.py[line:65] ERROR [Errno 2] No such file or directory: 'E:\\workspace\\PycharmProject\\autotest_platform/report/report_module.xls'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\analyse.py", line 36, in export2excel
+    src = open_workbook(config.src_path + '/report/report_module.xls',formatting_info=True)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\xlrd\__init__.py", line 60, in inspect_format
+    with open(path, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\workspace\\PycharmProject\\autotest_platform/report/report_module.xls'
+2021-03-21 13:40:34,095 main.py[line:86] ERROR http_request() got an unexpected keyword argument 'headerdata'
+Traceback (most recent call last):
+  File "E:/workspace/PycharmProject/autotest_platform/main.py", line 42, in <module>
+    result_http_response = base_request.http_request(interface_url=url_interface,headerdata=headerdata,interface_param=param_interface,request_type=type_interface)#发送http请求
+TypeError: http_request() got an unexpected keyword argument 'headerdata'
+2021-03-21 13:45:29,833 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 13:45:29,838 requests.py[line:97] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\requests.py", line 81, in __http_get
+    timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 13:49:51,069 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 13:49:51,072 requests.py[line:97] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\requests.py", line 81, in __http_get
+    timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 13:56:19,495 main.py[line:86] ERROR http_request() got an unexpected keyword argument 'headerData'
+Traceback (most recent call last):
+  File "E:/workspace/PycharmProject/autotest_platform/main.py", line 42, in <module>
+    result_http_response = base_request.http_request(interface_url=url_interface,headerData=headerdata,interface_param=param_interface,request_type=type_interface)#发送http请求
+TypeError: http_request() got an unexpected keyword argument 'headerData'
+2021-03-21 13:58:26,448 main.py[line:86] ERROR http_request() got an unexpected keyword argument 'headerdata'
+Traceback (most recent call last):
+  File "E:/workspace/PycharmProject/autotest_platform/main.py", line 42, in <module>
+    result_http_response = base_request.http_request(interface_url=url_interface,headerdata=headerdata,interface_param=param_interface,request_type=type_interface)#发送http请求
+TypeError: http_request() got an unexpected keyword argument 'headerdata'
+2021-03-21 13:59:02,745 main.py[line:86] ERROR http_request() got an unexpected keyword argument 'headerdata'
+Traceback (most recent call last):
+  File "E:/workspace/PycharmProject/autotest_platform/main.py", line 42, in <module>
+    result_http_response = base_request.http_request(interface_url=url_interface,headerdata=header_data,interface_param=param_interface,request_type=type_interface)#发送http请求
+TypeError: http_request() got an unexpected keyword argument 'headerdata'
+2021-03-21 13:59:51,845 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 13:59:51,848 request.py[line:91] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 75, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:00:47,714 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:00:47,717 request.py[line:92] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 76, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:01:21,452 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:01:21,455 request.py[line:92] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 76, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:02:24,622 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:02:24,625 request.py[line:92] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 76, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:07:37,353 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:07:37,355 request.py[line:92] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 76, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:10:24,431 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:10:24,434 request.py[line:92] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 76, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:16:45,078 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:16:45,081 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 77, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:20:12,555 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:20:12,558 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 77, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:21:38,448 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:21:38,450 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 77, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:24:27,803 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:/workspace/PycharmProject/autotest_platform/common/request.py", line 77, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 14:30:49,192 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 14:30:49,195 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 77, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 15:23:17,673 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:23:17,677 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:23:17,904 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?appid=2017002&appkey=62345451mj56f454&channelId=Tnaot&clientName=5.2.0&Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:23:17,982 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:28:09,424 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:28:09,427 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 77, in __http_get
+    response = requests.get(url=requrl, headers=headerdata,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 15:31:47,209 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:31:47,212 request.py[line:93] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 77, in __http_get
+    response = requests.get(url=interface_url, headers=headerdata,params= interface_param,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 15:32:55,859 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:32:55,863 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:32:56,354 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:32:56,399 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:37:18,024 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:37:18,028 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:37:18,165 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:37:18,167 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:37:18,169 request.py[line:59] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 44, in __http_post
+    response = requests.post(url=interface_url, headers=headerdata,data=temp_interface_param,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 15:38:40,599 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:38:40,603 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:38:40,687 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:38:40,690 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:38:40,693 request.py[line:59] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 44, in __http_post
+    response = requests.post(url=interface_url, headers=headerdata,data=temp_interface_param,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+2021-03-21 15:39:34,615 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:39:34,618 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:39:35,360 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:39:35,363 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:40:25,754 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:40:25,758 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:40:25,855 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?appid=2017002&appkey=62345451mj56f454&channelId=Tnaot&clientName=5.2.0&Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:40:25,896 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:40:49,846 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:40:49,850 connectionpool.py[line:231] DEBUG Starting new HTTP connection (1): gzapi.tnaot.com:818
+2021-03-21 15:40:49,936 connectionpool.py[line:461] DEBUG http://gzapi.tnaot.com:818 "GET /api/home/open_app?appid=2017002&appkey=62345451mj56f454&channelId=Tnaot&clientName=5.2.0&Host=gzapi.tnaot.com%3A818&device_mac=54%3AB1%3A21%3A9F%3A03%3A50&app_version=5.2.0&debug=0&device_id=F9D32D7B74010783BE2B70D053844F7D08B0A750&device_model=vivo+X9i&device_type=1&lan=en-US HTTP/1.1" 200 None
+2021-03-21 15:40:49,967 compare.py[line:138] ERROR 'dict' object has no attribute 'startswith'
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\compare.py", line 120, in __recur_params
+    if result_interface.startswith('{') and isinstance(result_interface,str):  # 入参是字符串类型且能被转换成字典
+AttributeError: 'dict' object has no attribute 'startswith'
+2021-03-21 15:40:49,970 request.py[line:59] ERROR Value for header {debug: 0} must be of type str or bytes, not <class 'int'>
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 956, in check_header_validity
+    if not pat.match(value):
+TypeError: expected string or bytes-like object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workspace\PycharmProject\autotest_platform\common\request.py", line 44, in __http_post
+    response = requests.post(url=interface_url, headers=headerdata,data=temp_interface_param,verify=False,timeout=10)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_headers(headers)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\models.py", line 451, in prepare_headers
+    check_header_validity(header)
+  File "E:\workspace\PycharmProject\autotest_platform\venv\lib\site-packages\requests\utils.py", line 960, in check_header_validity
+    "bytes, not %s" % (name, value, type(value)))
+requests.exceptions.InvalidHeader: Value for header {debug: 0} must be of type str or bytes, not <class 'int'>

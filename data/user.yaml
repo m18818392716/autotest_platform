@@ -1,0 +1,6 @@
+user1:
+  locator: id
+  keyword: Python
+user2:
+  locator: id
+  keyword: java
